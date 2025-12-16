@@ -8,7 +8,7 @@ public class Iniciar {
 
         Teste objT = new Teste();
 
-        //System.out.println(objT.a + objT.b + objT.c + objT.d);
+        //System.out.println(objT.a + objT.b + objT.c + objT.d + objT.e);
 
         System.out.println("Soma Objeto Teste: " + objT.somar());
         System.out.println("Soma Objeto Teste2: " + Teste2.somar());
