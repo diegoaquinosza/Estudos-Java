@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Curso extra senac/Curso extra senac.iml" filepath="$PROJECT_DIR$/Curso extra senac/Curso extra senac.iml" />
       <module fileurl="file://$PROJECT_DIR$/Estudos-Java.iml" filepath="$PROJECT_DIR$/Estudos-Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/Implementacao Aula2 12-09-2025 Metodos Imprimir/Implementacao Aula02 12-09-2025 Fundamentos Metodos Imprimir.iml" filepath="$PROJECT_DIR$/Implementacao Aula2 12-09-2025 Metodos Imprimir/Implementacao Aula02 12-09-2025 Fundamentos Metodos Imprimir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Implementacao Aula4 26-09-2025 Modificadores de acesso/Implementacao Aula4 26-09-2025 Modificadores de acesso.iml" filepath="$PROJECT_DIR$/Implementacao Aula4 26-09-2025 Modificadores de acesso/Implementacao Aula4 26-09-2025 Modificadores de acesso.iml" />
       <module fileurl="file://$PROJECT_DIR$/implementacao Aula3 19-09-2025 Projeto Estudante/implementacao Aula3 19-09-2025 Projeto Estudante.iml" filepath="$PROJECT_DIR$/implementacao Aula3 19-09-2025 Projeto Estudante/implementacao Aula3 19-09-2025 Projeto Estudante.iml" />
     </modules>
   </component>
