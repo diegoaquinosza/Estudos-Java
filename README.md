@@ -12,14 +12,16 @@ O projeto está organizado em módulos focados em tópicos específicos:
 
 * **Fundamentos:** Lógica de programação, variáveis e controle de fluxo.
 * **POO (Programação Orientada a Objetos):**
-    * `ProjetoEstudante`: Sistema de cadastro utilizando ArrayList, tratamento de exceções (try-catch), métodos estáticos vs instância e encapsulamento.
+    * `Aula02`: Refatoração de exercício legado. Foco na diferença entre **Atributos de Classe (`static`)** vs **Atributos de Instância**, uso de `Scanner` injetado e Encapsulamento.
+    * `Aula03`: Sistema de cadastro utilizando ArrayList, tratamento de exceções (try-catch), métodos estáticos vs instância.
 
 ## 🚀 O que estou aprendendo
 - [x] Criação de Classes e Objetos
+- [x] Encapsulamento (Modificadores de acesso `private`/`public`)
 - [x] Listas Dinâmicas (ArrayList)
 - [x] Tratamento de Erros (Try-Catch e validações)
 - [x] Métodos `static` vs métodos de instância
 
 
 ---
-*Desenvolvido por [Seu Nome]*
+*Desenvolvido por Diego Aquino*
