@@ -1,17 +1,19 @@
 package exercicio_livro;
 
+import java.util.Scanner;
+
 public class Livro {
 
-    public String titulo;
-    public String autor;
-    public int ano;
-    public boolean emprestado = false;
+    private String titulo;
+    private String autor;
+    private int ano;
+    private boolean emprestado = false;
 
     //Construtores
     public Livro() {
     }
 
-    public Livro(String titulo, String autor, int ano, boolean emprestado) {
+    public Livro(String titulo, String autor, int ano) {
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
@@ -19,29 +21,42 @@ public class Livro {
     }
 
     //Métodos
+    public static Livro cadastrarLivro (Scanner input) {
+        System.out.println("\n---- Primeiro cadstre um livro! ----");
+        System.out.print("Digite o título do livro: ");
+        String tituloTemp = input.nextLine();
+        System.out.print("Digite o nome do autor: ");
+        String autorTemp = input.nextLine();
+        System.out.print("Digite o ano: ");
+        int anoTemp = input.nextInt();
+        input.nextLine();
+        System.out.println("---- Livro cadastrado com sucesso! ----");
+        return new Livro(tituloTemp, autorTemp, anoTemp);
+    }
+
     public void emprestar() {
-        if (this.emprestado == false) {
+        if (!this.emprestado) {
             this.emprestado = true;
-            System.out.println("Livro emprestado com sucesso!");
+            System.out.println("\nLivro emprestado com sucesso!");
         } else {
-            System.out.println("Livro já está emprestado!");
+            System.out.println("\nLivro já está emprestado!");
         }
     }
 
     public void devolver() {
-        if (this.emprestado == true) {
+        if (this.emprestado) {
             this.emprestado = false;
-            System.out.println("Livro devolvido com sucesso!");
+            System.out.println("\nLivro devolvido com sucesso!");
         } else {
-            System.out.println("Livro está na estante (já foi devolvido!)");
+            System.out.println("\nLivro está na estante (já foi devolvido!)");
         }
     }
 
-    public void mostarInfo() {
+    public void mostrarInfo() {
         System.out.println("\n---- Mostar Info Livro ----");
         System.out.println("Titulo: " + this.titulo);
         System.out.println("Autor: " + this.autor);
         System.out.println("Ano: " + this.ano);
-        System.out.println("Emprestado: " + this.emprestado);
+        System.out.println("Emprestado: " + (this.emprestado ? "Sim" : "Não"));
     }
 }
