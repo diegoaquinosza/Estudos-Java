@@ -33,7 +33,7 @@ public class Livro {
             this.emprestado = false;
             System.out.println("Livro devolvido com sucesso!");
         } else {
-            System.out.println("Livro está na estante (já foi devolvido)");
+            System.out.println("Livro está na estante (já foi devolvido!)");
         }
     }
 
