@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Curso extra senac/CursoExtraSenac.iml" filepath="$PROJECT_DIR$/Curso extra senac/CursoExtraSenac.iml" />
       <module fileurl="file://$PROJECT_DIR$/Estudos-Java.iml" filepath="$PROJECT_DIR$/Estudos-Java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Implementacao Aula2 12-09-2025 Metodos Imprimir/Implementacao Aula02 12-09-2025 Fundamentos Metodos Imprimir.iml" filepath="$PROJECT_DIR$/Implementacao Aula2 12-09-2025 Metodos Imprimir/Implementacao Aula02 12-09-2025 Fundamentos Metodos Imprimir.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Implementacao Aula4 26-09-2025 Modificadores de acesso/Implementacao Aula4 26-09-2025 Modificadores de acesso.iml" filepath="$PROJECT_DIR$/Implementacao Aula4 26-09-2025 Modificadores de acesso/Implementacao Aula4 26-09-2025 Modificadores de acesso.iml" />
-      <module fileurl="file://$PROJECT_DIR$/implementacao Aula3 19-09-2025 Projeto Estudante/implementacao Aula3 19-09-2025 Projeto Estudante.iml" filepath="$PROJECT_DIR$/implementacao Aula3 19-09-2025 Projeto Estudante/implementacao Aula3 19-09-2025 Projeto Estudante.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/ExercicioBibliotecaLivro/ExercicioBibliotecaLivro.iml" filepath="$PROJECT_DIR$/SenacCursoJava/ExercicioBibliotecaLivro/ExercicioBibliotecaLivro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/ExercicioListaTarefas/ExercicioListaTarefas.iml" filepath="$PROJECT_DIR$/SenacCursoJava/ExercicioListaTarefas/ExercicioListaTarefas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IftoPoo/IftoPoo.iml" filepath="$PROJECT_DIR$/IftoPoo/IftoPoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IftoPoo/PooIftoAula02/PooIftoAula02.iml" filepath="$PROJECT_DIR$/IftoPoo/PooIftoAula02/PooIftoAula02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IftoPoo/PooIftoAula03/PooIftoAula03.iml" filepath="$PROJECT_DIR$/IftoPoo/PooIftoAula03/PooIftoAula03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IftoPoo/PooIftoAula04/PooIftoAula04.iml" filepath="$PROJECT_DIR$/IftoPoo/PooIftoAula04/PooIftoAula04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/SenacCursoJava.iml" filepath="$PROJECT_DIR$/SenacCursoJava/SenacCursoJava.iml" />
     </modules>
   </component>
 </project>
