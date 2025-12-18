@@ -8,15 +8,18 @@ Bem-vindo(a) ao meu repositório de estudos! Aqui concentro meus exercícios pr�
 * **Git & GitHub** para versionamento
 
 ## 📂 Estrutura do Repositório
-O projeto está organizado em módulos focados em tópicos específicos:
+O projeto está organizado em dois grandes módulos, separando a teoria acadêmica da prática intensiva:
 
-* **Fundamentos:** Lógica de programação, variáveis e controle de fluxo.
-* **POO (Programação Orientada a Objetos):**
-    * `Aula02`: Refatoração de exercício legado. Foco na diferença entre **Atributos de Classe (`static`)** vs **Atributos de Instância**, uso de `Scanner` injetado e Encapsulamento.
-    * `Aula03`: Sistema de cadastro utilizando ArrayList, tratamento de exceções (try-catch), métodos estáticos vs instância.
+### 🏛️ IftoDisciplinaPoo (Faculdade)
+Exercícios e exemplos teóricos desenvolvidos durante as aulas de Programação Orientada a Objetos no IFTO.
+* `Aula02`: Métodos, Atributos e Visibilidade.
+* `Aula03`: Estruturas de Dados (ArrayList) e Exceções.
+* `Aula04`: Modificadores de Acesso avançados.
 
-* **Curso Extra (Exercícios Práticos):**
-    * `exercicio_livro`: Modelagem de objeto com controle de estado (disponível/emprestado). Implementação de encapsulamento, construtores, **Static Factory Method** e menu interativo no console.
+### 🚀 SenacCursoJava (Curso Extra)
+Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado em "Mão na Massa").
+* `Exercicio06ListaTarefas`: CRUD completo em memória com ArrayList.
+* `Exercicio07BibliotecaLivro`: Criação de classes, encapsulamento e menus.
 
 ## 🚀 O que estou aprendendo
 - [x] Criação de Classes e Objetos
