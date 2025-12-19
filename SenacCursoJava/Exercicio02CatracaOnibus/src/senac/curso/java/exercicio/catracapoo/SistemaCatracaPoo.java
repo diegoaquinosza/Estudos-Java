@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class SistemaCatracaPoo {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Catraca onibus = new Catraca();
+        Catraca onibus1 = new Catraca();
+        Catraca onibus2 = new Catraca();
+
 
         String opcao;
 
@@ -14,40 +16,149 @@ public class SistemaCatracaPoo {
                     "1 - Registrar entrada de passageiro\n" +
                     "2 - Registrar saída de passageiro\n" +
                     "3 - Mostrar situação atual do ônibus\n" +
-                    "4 - Resetar ônibus (zerar passageiros)\n" +
-                    "5 - Sair\n\n" +
+                    "4 - Mostrar total de ticket vendidos\n" +
+                    "5 - Resetar ônibus (zerar passageiros)\n" +
+                    "6 - Resetar frota (zerar dados da frota)\n" +
+                    "7 - Sair\n" +
                     "Escolha uma opção: ");
             opcao = input.nextLine();
             switch (opcao) {
                 case "1":
-                    System.out.println("- Registrar entrada de passageiro");
-                    onibus.registrarEntrada();
+                    System.out.print("\n- Registrar entrada de passageiro");
+                    String select;
+                    do {
+                        System.out.println("""
+                            \n=== Escolha um Ônibus ===
+                            1 - Ônibus 1
+                            2 - Ônibus 2
+                            3 - voltar
+                            \s""");
+                        System.out.print("Escolha um ônibus: ");
+                        select = input.nextLine();
+                        switch (select) {
+                            case "1":
+                                System.out.println("---> Ônibus 1");
+                                onibus1.registrarEntrada();
+                                break;
+                            case "2":
+                                System.out.println("---> Ônibus 2");
+                                onibus2.registrarEntrada();
+                                break;
+                            case "3":
+                                System.out.println("<- voltar");
+                                break;
+                            default:
+                                System.out.println("Opção inválida!");
+                        }
+                    } while (!select.equals("3"));
                     break;
 
                 case "2":
-                    System.out.println(" - Registrar saída de passageiro");
-                    onibus.registrarSaida();
+                    System.out.println("\n - Registrar saída de passageiro");
+                    do {
+                        System.out.print("""
+                            \n=== Escolha um Ônibus ===
+                            1 - Ônibus 1
+                            2 - Ônibus 2
+                            3 - voltar
+                            \s""");
+                        System.out.print("Escolha um ônibus: ");
+                        select = input.nextLine();
+                        switch (select) {
+                            case "1":
+                                System.out.println("---> Ônibus 1");
+                                onibus1.registrarSaida();
+                                break;
+                            case "2":
+                                System.out.println("---> Ônibus 2");
+                                onibus2.registrarSaida();
+                                break;
+                            case "3":
+                                System.out.println("<- voltar");
+                                break;
+                            default:
+                                System.out.println("Opção inválida!");
+                        }
+                    } while (!select.equals("3"));
                     break;
 
                 case "3":
-                    System.out.println(" - Mostrar situação atual do ônibus");
-                    onibus.mostrarSituacao();
+                    System.out.println("\n - Mostrar situação do ônibus atual");
+                    do {
+                        System.out.print("""
+                            \n=== Escolha um Ônibus ===
+                            1 - Ônibus 1
+                            2 - Ônibus 2
+                            3 - voltar
+                            \s""");
+                        System.out.print("Escolha um ônibus: ");
+                        select = input.nextLine();
+                        switch (select) {
+                            case "1":
+                                System.out.println("\n---> Ônibus 1");
+                                onibus1.mostrarSituacao();
+                                break;
+                            case "2":
+                                System.out.println("\n---> Ônibus 2");
+                                onibus2.mostrarSituacao();
+                                break;
+                            case "3":
+                                System.out.println("<- voltar");
+                                break;
+                            default:
+                                System.out.println("Opção inválida!");
+                        }
+                    } while (!select.equals("3"));
                     break;
 
                 case "4":
-                    System.out.println(" - Resetar ônibus");
-                    onibus.resetar();
+                    System.out.println("\n - Mostrar total de ticket vendidos");
+                    Catraca.mostrarSituacaoGeral();
                     break;
 
                 case "5":
-                    System.out.println(" - Sair");
+                    System.out.println("\n - Resetar ônibus");
+                    do {
+                        System.out.print("""
+                            \n=== Escolha um Ônibus ===
+                            1 - Ônibus 1
+                            2 - Ônibus 2
+                            3 - voltar
+                            \s""");
+                        System.out.print("Escolha um ônibus: ");
+                        select = input.nextLine();
+                        switch (select) {
+                            case "1":
+                                System.out.print("\n---> Ônibus 1");
+                                onibus1.resetar();
+                                break;
+                            case "2":
+                                System.out.print("\n---> Ônibus 2");
+                                onibus2.resetar();
+                                break;
+                            case "3":
+                                System.out.println("<- voltar");
+                                break;
+                            default:
+                                System.out.println("Opção inválida!");
+                        }
+                    } while (!select.equals("3"));
+                    break;
+
+                case "6":
+                    System.out.println("\n - Resetar frota");
+                    Catraca.resetarFrota();
+                    break;
+
+                case "7":
+                    System.out.println("\n - Sair");
                     System.out.println("Saindo... Até logo!");
                     break;
 
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("\nOpção inválida!");
             }
-        } while (!opcao.equals("5"));
+        } while (!opcao.equals("7"));
 
     }
 }
