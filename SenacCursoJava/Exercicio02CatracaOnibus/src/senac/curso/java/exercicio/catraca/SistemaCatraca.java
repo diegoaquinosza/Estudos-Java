@@ -1,12 +1,10 @@
 package senac.curso.java.exercicio.catraca;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Catraca {
+public class SistemaCatraca {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-//        ArrayList<Integer> onibus = new ArrayList<Integer>();
         int capacidadeMaxima = 45;
         int passageiro = 0;
         boolean lotado = false;
