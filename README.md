@@ -5,7 +5,7 @@ Bem-vindo(a) ao meu repositório de estudos! Aqui concentro meus exercícios pr�
 ## 🛠️ Tecnologias e Ferramentas
 * **Java** (JDK atualizado)
 * **IntelliJ IDEA** (IDE utilizada)
-* **Git & GitHub** para versionamento
+* **Git & GitHub** para versionamento (Commit Semântico)
 
 ## 📂 Estrutura do Repositório
 O projeto está organizado em dois grandes módulos, separando a teoria acadêmica da prática intensiva:
@@ -18,17 +18,28 @@ Exercícios e exemplos teóricos desenvolvidos durante as aulas de Programação
 
 ### 🚀 SenacCursoJava (Curso Extra)
 Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado em "Mão na Massa").
-* `Exercicio06ListaTarefas`: CRUD completo em memória com ArrayList.
-* `Exercicio07BibliotecaLivro`: Criação de classes, encapsulamento e menus.
+
+* **`Exercicio06ListaTarefas`:**
+    * Gerenciador de tarefas (CRUD em memória).
+    * Uso de `ArrayList`, manipulação de índices e validação de dados.
+
+* **`Exercicio07BibliotecaLivro`:**
+    * Modelagem de Classes e Objetos.
+    * Encapsulamento e Métodos Construtores.
+
+* **`Exercicio02Catraca` (Novo!):**
+    * Sistema de gestão de frota de ônibus.
+    * **Destaque:** Implementação prática de **Membros Estáticos (`static`)** para controle global da frota vs. controle individual por ônibus.
+    * Refatoração de código Procedural para Orientado a Objetos.
 
 ## 🚀 O que estou aprendendo
 - [x] Criação de Classes e Objetos
 - [x] Encapsulamento (Modificadores de acesso `private`/`public`)
 - [x] Listas Dinâmicas (ArrayList)
-- [x] Tratamento de Erros (Try-Catch e validações)
-- [x] Métodos `static` vs métodos de instância
-- [x] Lógica de Menus (do-while e switch-case)
-- [x] Refatoração e Clean Code básico
+- [x] Tratamento de Erros e Validações de Entrada
+- [x] Diferença entre `static` (Classe) e Instância (Objeto)
+- [x] Refatoração de Código (Clean Code)
+- [x] Lógica de Menus e Navegação
 
 ---
 *Desenvolvido por Diego Aquino*
