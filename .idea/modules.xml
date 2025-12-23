@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Estudos-Java.iml" filepath="$PROJECT_DIR$/Estudos-Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/Exercicio02CatracaOnibus/Exercicio02CatracaOnibus.iml" filepath="$PROJECT_DIR$/SenacCursoJava/Exercicio02CatracaOnibus/Exercicio02CatracaOnibus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/Exercicio03LaboratorioQuimico/Exercicio03LaboratorioQuimico.iml" filepath="$PROJECT_DIR$/SenacCursoJava/Exercicio03LaboratorioQuimico/Exercicio03LaboratorioQuimico.iml" />
       <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/Exercicio06ListaTarefas/Exercicio06ListaTarefas.iml" filepath="$PROJECT_DIR$/SenacCursoJava/Exercicio06ListaTarefas/Exercicio06ListaTarefas.iml" />
       <module fileurl="file://$PROJECT_DIR$/SenacCursoJava/Exercicio07BibliotecaLivro/Exercicio07BibliotecaLivro.iml" filepath="$PROJECT_DIR$/SenacCursoJava/Exercicio07BibliotecaLivro/Exercicio07BibliotecaLivro.iml" />
       <module fileurl="file://$PROJECT_DIR$/IftoDisciplinaPoo/IftoDisciplinaPoo.iml" filepath="$PROJECT_DIR$/IftoDisciplinaPoo/IftoDisciplinaPoo.iml" />
