@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class SistemaLaboratorio {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Laboratorio laboratorio = new Laboratorio();
         String opcao;
 
         do {
             System.out.print("\n" +
-                    "==== SISTEMA DE SEGURANÇA DO LABORÁTORIO ==== +" +
+                    "==== SISTEMA DE SEGURANÇA DO LABORÁTORIO ====\n" +
                     "1 - Abrir/Fechar porta\n" +
                     "2 - Alterar temperatura (normal/alta)\n" +
                     "3 - Alterar nível de gases tóxicos (presentes/ausentes)\n" +
@@ -22,21 +23,27 @@ public class SistemaLaboratorio {
             switch (opcao) {
                 case "1":
                     System.out.println("Abrir/Fechar porta");
+                    laboratorio.portaAbrirFechar();
                     break;
                 case "2":
                     System.out.println("Alterar temperatura (normal/alta)");
+                    laboratorio.alterarTemperatura();
                     break;
                 case "3":
                     System.out.println("Alterar nível de gases tóxicos (presentes/ausentes)");
+                    laboratorio.alterarGasesToxicos();
                     break;
                 case "4":
                     System.out.println("Ativar/Desativar alarme");
+                    laboratorio.alarmeAtivarDesativar();
                     break;
                 case "5":
                     System.out.println("Relatório de Segurança");
+                    laboratorio.relatorio();
                     break;
                 case "6":
                     System.out.println("Resetar sistema");
+                    laboratorio.resetar();
                     break;
                 case "7":
                     System.out.println("Sair");
