@@ -19,7 +19,7 @@ public class Laboratorio {
     public void portaAbrirFechar() {
         if (this.temperatura.equals("alta") || this.gasesToxicos.equals("presentes")) {
             System.out.println("Porta não pode ser aberta: ambiente inseguro!");
-        } else if (this.portaFechada == false) {
+        } else if (!this.portaFechada) {
             this.portaFechada = true;
             System.out.println("Porta fechada!" );
         } else  {
@@ -75,7 +75,21 @@ public class Laboratorio {
             System.out.println("Status geral: CRÍTICO");
         } else if (!this.portaFechada && this.temperatura.equals("alta")) {
             System.out.println("Status geral: INSEGURO");
+        } else if (!this.portaFechada && this.gasesToxicos.equals("presentes")) {
+            System.out.println("Status geral: INSEGURO");
+        } else if (this.temperatura.equals("alta") || this.gasesToxicos.equals("presentes")) {
+            System.out.println("Status geral: INSEGURO");
+        } else {
+            System.out.println("Status geral: SEGURO");
         }
+    }
+
+    public void resetar() {
+        this.portaFechada = false;
+        this.temperatura = "normal";
+        this.gasesToxicos = "ausentes";
+        this.alarmeAtivo = false;
+        System.out.println("Resetando sistema... Resetado!");
     }
 
 
