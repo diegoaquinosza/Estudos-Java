@@ -27,10 +27,14 @@ Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado
     * Modelagem de Classes e Objetos.
     * Encapsulamento e Métodos Construtores.
 
-* **`Exercicio02Catraca` (Novo!):**
+* **`Exercicio02Catraca`:**
     * Sistema de gestão de frota de ônibus.
     * **Destaque:** Implementação prática de **Membros Estáticos (`static`)** para controle global da frota vs. controle individual por ônibus.
     * Refatoração de código Procedural para Orientado a Objetos.
+
+* **`Exercicio03Laboratorio`:**
+    * Sistema de segurança com controle de estados críticos (Gases, Temperatura, Porta).
+    * **Destaque:** Aplicação de **Lógica Defensiva** (impedir ações inseguras baseadas no estado do objeto) e Encapsulamento rigoroso.
 
 ## 🚀 O que estou aprendendo
 - [x] Criação de Classes e Objetos
@@ -38,8 +42,16 @@ Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado
 - [x] Listas Dinâmicas (ArrayList)
 - [x] Tratamento de Erros e Validações de Entrada
 - [x] Diferença entre `static` (Classe) e Instância (Objeto)
+- [x] Lógica Defensiva e Regras de Negócio
 - [x] Refatoração de Código (Clean Code)
-- [x] Lógica de Menus e Navegação
+
+## 🚧 Próximos Passos (Roadmap)
+Meu plano de estudos para as próximas semanas, focado em fechar lacunas e dominar a manipulação de arquivos:
+
+1.  **Listas de Objetos:** Criar e manipular listas complexas (Agenda de Contatos).
+2.  **Persistência de Dados (File I/O):** Ler e gravar informações em arquivos `.txt` (Simulando banco de dados).
+3.  **Relacionamento entre Classes:** Criar sistemas onde um Objeto "tem" outro (Ex: Departamento tem Colaboradores).
+4.  **Meta Final:** Reimplementação completa do Sistema Acadêmico (Prova Prática da Faculdade).
 
 ---
 *Desenvolvido por Diego Aquino*
