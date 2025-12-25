@@ -1,9 +1,6 @@
 package senac.curso.java.exercicio.agenda;
 
-import java.util.Scanner;
-
 public class Contato {
-    Scanner input = new Scanner(System.in);
     private String nome;
     private String telefone;
     private String email;
@@ -19,8 +16,7 @@ public class Contato {
     }
 
     public void setNome(String nome) {
-        System.out.print("Digite o nome do contato: ");
-        this.nome = nome = input.nextLine();
+        this.nome = nome;
     }
 
     public String getTelefone() {
@@ -28,8 +24,7 @@ public class Contato {
     }
 
     public void setTelefone(String telefone) {
-        System.out.print("Digite o número do telefone: ");
-        this.telefone = telefone = input.nextLine();
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -37,8 +32,7 @@ public class Contato {
     }
 
     public void setEmail(String email) {
-        System.out.print("Digite o endereço de e-mail: ");
-        this.email = email  = input.nextLine();
+        this.email = email;
     }
 
     @Override
