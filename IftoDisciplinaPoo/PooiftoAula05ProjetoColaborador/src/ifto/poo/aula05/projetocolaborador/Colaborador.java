@@ -1,10 +1,13 @@
 package ifto.poo.aula05.projetocolaborador;
 
+import java.util.List;
+
 public class Colaborador {
     private String nome;
     private String cpf;
     private int idade;
 
+//    Constructors
     public Colaborador() {
     }
 
@@ -14,6 +17,7 @@ public class Colaborador {
         this.idade = idade;
     }
 
+//    Getter and setter
     public String getNome() {
         return nome;
     }
@@ -36,6 +40,23 @@ public class Colaborador {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+//    Métodos
+    public void gerarColaborador(List<Colaborador> lista) {
+
+    }
+
+    public void listarColaborador(int filtro) {
+
+    }
+
+    public String localizarColaborador(String colaborador) {
+        return colaborador;
+    }
+
+    public void deletarColaborador(Colaborador colaborador) {
+
     }
 
 
