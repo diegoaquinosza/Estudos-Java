@@ -82,11 +82,22 @@ public class Colaborador {
         System.out.println("Total de colaboradores: " + total);
     }
 
-    public String localizarColaborador(String colaborador) {
-        return colaborador;
+    public Colaborador localizarColaborador(List<Colaborador> lista, String nomeBusca) {
+        for (Colaborador colaborador : lista) {
+            if (colaborador.getNome().equalsIgnoreCase(nomeBusca)) {
+                return colaborador;
+            }
+        }
+        return null;
     }
 
-    public void deletarColaborador(Colaborador colaborador) {
+    public void deletarColaborador(List<Colaborador> lista, Colaborador colaboradorParaDeletar) {
+        if (colaboradorParaDeletar != null) {
+            lista.remove(colaboradorParaDeletar);
+            System.out.println("Colaborador " + colaboradorParaDeletar.getNome() + " removido com sucesso!");
+        } else {
+            System.out.println("Não foi possível remover (Colaborador inválido).");
+        }
 
     }
 
