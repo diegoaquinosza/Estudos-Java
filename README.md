@@ -14,7 +14,8 @@ O projeto está organizado em dois grandes módulos, separando a teoria acadêmi
 Exercícios e exemplos teóricos desenvolvidos durante as aulas de Programação Orientada a Objetos no IFTO.
 * `Aula02`: Métodos, Atributos e Visibilidade.
 * `Aula03`: Estruturas de Dados (ArrayList) e Exceções.
-* `Aula04`: Modificadores de Acesso avançados.
+* `Aula04`: Modificadores de Acesso avançados e Encapsulamento.
+* **`Aula05` (Novo!):** Leitura de Arquivos (`File` e `Scanner`), Tratamento de Strings (`split`) e conversão de dados de texto (`.txt`) para Objetos Java.
 
 ### 🚀 SenacCursoJava (Curso Extra)
 Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado em "Mão na Massa").
@@ -35,25 +36,27 @@ Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado
     * Sistema de segurança com controle de estados críticos.
     * **Destaque:** Aplicação de **Lógica Defensiva** (impedir ações inseguras baseadas no estado do objeto) e Encapsulamento rigoroso.
 
-* **`ExercicioAgendaContato` (Novo!):**
+* **`ExercicioAgendaContato`:**
     * Sistema de CRUD (Criar, Ler, Remover) de contatos.
-    * **Destaque:** Manipulação de **Lista de Objetos** (`ArrayList<Contato>`), separação de responsabilidades (Classe de Modelo vs Classe Principal) e uso de **Lambda Expressions** (`forEach`).
+    * **Destaque:** Manipulação de **Lista de Objetos** (`ArrayList<Contato>`), separação de responsabilidades e uso de **Lambda Expressions** (`forEach`).
 
 ## 🚀 O que estou aprendendo
 - [x] Criação de Classes e Objetos
 - [x] Encapsulamento (Modificadores de acesso `private`/`public`)
 - [x] Listas Dinâmicas (ArrayList)
-- [x] Tratamento de Erros e Validações de Entrada
+- [x] **Leitura de Arquivos e Tratamento de Exceções (Try-Catch)**
+- [x] **Parse de Strings (Split e Conversões)**
 - [x] Diferença entre `static` (Classe) e Instância (Objeto)
 - [x] Lógica Defensiva e Regras de Negócio
-- [x] **Manipulação de Objetos Complexos em Listas**
 - [x] Refatoração de Código (Clean Code)
 
 ## 🚧 Próximos Passos (Roadmap)
 Meu plano de estudos para as próximas semanas, focado em fechar lacunas e dominar a manipulação de arquivos:
 
 1.  ~~**Listas de Objetos:** Criar e manipular listas complexas (Agenda de Contatos).~~ (Concluído ✅)
-2.  **Persistência de Dados (File I/O):** Ler e gravar informações em arquivos `.txt` (Simulando banco de dados).
+2.  **Persistência de Dados (File I/O):**
+    - [x] Leitura de Arquivos (`.txt` -> Objetos).
+    - [ ] Escrita em Arquivos (Gravar alterações e CRUD completo).
 3.  **Relacionamento entre Classes:** Criar sistemas onde um Objeto "tem" outro (Ex: Departamento tem Colaboradores).
 4.  **Meta Final:** Reimplementação completa do Sistema Acadêmico (Prova Prática da Faculdade).
 
