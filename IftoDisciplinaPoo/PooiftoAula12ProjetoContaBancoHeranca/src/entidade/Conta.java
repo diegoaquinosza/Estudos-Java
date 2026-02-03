@@ -9,7 +9,7 @@ public class Conta {
     private double saldo;
     private static List<Conta> lista = new ArrayList<>();
 
-    //Construtores
+    //Construtores-----------
     public Conta() {
     }
 
@@ -19,7 +19,20 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    //Getters e Setters
+    //Métodos-----------------
+    public void criarCadastro(){}
+
+    public void saque(double valor){}
+
+    public void deposito(double valor){}
+
+    public void listar(int tipo){}
+
+    public Conta pesquisar(String numConta, int tipo){
+        return null;
+    }
+
+    //Getters e Setters-------
     public String getNumConta() {
         return numConta;
     }
@@ -51,20 +64,6 @@ public class Conta {
     public static void setLista(List<Conta> lista) {
         Conta.lista = lista;
     }
-
-    //Métodos
-    public void criarCadastro(){}
-
-    public void saque(double valor){}
-
-    public void deposito(double valor){}
-
-    public void listar(int tipo){}
-
-    public Conta pesquisar(String numConta, int tipo){
-        return null;
-    }
-
 }
 
 
