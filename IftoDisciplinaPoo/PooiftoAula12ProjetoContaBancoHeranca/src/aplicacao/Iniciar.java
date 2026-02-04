@@ -31,5 +31,13 @@ import java.io.IOException;
             } else {
                 System.out.println("Erro: A lista está vazia.");
             }
+
+            // ... depois do criarCadastro ...
+
+            // Teste: Mostra só as Correntes
+            aux.listar(0);
+
+            // Teste: Mostra só as Poupanças
+            aux.listar(1);
         }
     }

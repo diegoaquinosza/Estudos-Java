@@ -67,7 +67,35 @@ public class Conta {
 
     public void deposito(double valor){}
 
-    public void listar(int tipo){}
+    // Recebe 0 para Corrente e 1 para Poupança
+    public void listar(int tipo) {
+
+        // 1. Cabeçalho para ficar organizado no console
+        if (tipo == 0) {
+            System.out.println("\n--- RELATÓRIO: CONTAS CORRENTES ---");
+        } else if (tipo == 1) {
+            System.out.println("\n--- RELATÓRIO: CONTAS POUPANÇA ---");
+        } else {
+            System.out.println("Opção inválida (Use 0 ou 1)");
+            return; // Sai do método se o número for errado
+        }
+
+        // 2. Percorre a lista inteira (que tem os dois tipos misturados)
+        for (Conta c : lista) {
+
+            // CENÁRIO A: O usuário quer Conta Corrente (0)
+            // E (&&) o objeto atual "c" É UMA (instanceof) ContaCorrente
+            if (tipo == 0 && c instanceof ContaCorrente) {
+                System.out.println("CC: " + c.getNumConta() + " | Titular: " + c.getTitular() + " | Saldo: " + c.getSaldo());
+            }
+
+            // CENÁRIO B: O usuário quer Conta Poupança (1)
+            // E (&&) o objeto atual "c" É UMA (instanceof) ContaPoupanca
+            else if (tipo == 1 && c instanceof ContaPoupanca) {
+                System.out.println("CP: " + c.getNumConta() + " | Titular: " + c.getTitular() + " | Saldo: " + c.getSaldo());
+            }
+        }
+    }
 
     public Conta pesquisar(String numConta, int tipo){
         return null;
