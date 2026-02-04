@@ -97,7 +97,22 @@ public class Conta {
         }
     }
 
-    public Conta pesquisar(String numConta, int tipo){
+    public Conta pesquisar(String numContaProcurado, int tipo) {
+
+        for (Conta c : lista) {
+            // 1. Verifica se o número bate (Use equals para String!)
+            if (c.getNumConta().equals(numContaProcurado)) {
+
+                // 2. Verifica se o tipo bate com o que foi pedido
+                if (tipo == 0 && c instanceof ContaCorrente) {
+                    return c; // ACHOU Conta Corrente! Retorna ela.
+                }
+                else if (tipo == 1 && c instanceof ContaPoupanca) {
+                    return c; // ACHOU Conta Poupança! Retorna ela.
+                }
+            }
+        }
+        // Se rodou a lista toda e não achou ou o tipo estava errado
         return null;
     }
 
