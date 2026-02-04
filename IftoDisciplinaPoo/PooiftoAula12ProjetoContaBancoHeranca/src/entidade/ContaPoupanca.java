@@ -1,25 +1,29 @@
 package entidade;
 
+// EXTENDS: Herda de Conta
 public class ContaPoupanca extends Conta {
+
+    // Atributo exclusivo
     private double taxaRend;
 
-    //Construtor----------------
+    // --- Construtores ---
     public ContaPoupanca() {}
 
     public ContaPoupanca(String numConta, String titular, double saldo, double taxaRend) {
+        // Delega para a superclasse
         super(numConta, titular, saldo);
         this.taxaRend = taxaRend;
     }
 
-    //Métodos-------------------
-    public void ganhoMes(int mes){}
-
-    //Getters e Setters---------
-    public double getTaxaRend() {
-        return taxaRend;
+    // --- Métodos Específicos ---
+    public void ganhoMes(int mes) {
+        // Calcula quanto o dinheiro vai render baseado na taxa e tempo
+        double rendimento = getSaldo() * this.taxaRend * mes;
+        System.out.println("Rendimento projetado em " + mes + " meses: R$ " + rendimento);
+        System.out.println("Saldo Total: " + (getSaldo() + rendimento));
     }
 
-    public void setTaxaRend(double taxaRend) {
-        this.taxaRend = taxaRend;
-    }
+    // Getter e Setter exclusivo
+    public double getTaxaRend() { return taxaRend; }
+    public void setTaxaRend(double taxaRend) { this.taxaRend = taxaRend; }
 }

@@ -7,13 +7,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Conta {
+    // Atributos Encapsulados (private): Só a própria classe acessa diretamente.
     private String numConta;
     private String titular;
     private double saldo;
+
+    // STATIC: Significa que esta lista pertence à CLASSE Conta, e não a um objeto específico.
+    // É uma memória compartilhada por todo o sistema.
+    // O polimorfismo acontece aqui: List<Conta> aceita ContaCorrente e ContaPoupanca.
     private static List<Conta> lista = new ArrayList<>();
 
-    //Construtores-----------
+    // --- Construtores ---
     public Conta() {
+        // Construtor vazio: Útil para criar um objeto "auxiliar" apenas para chamar métodos.
     }
 
     public Conta(String numConta, String titular, double saldo) {
@@ -22,26 +28,37 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    //Métodos-----------------
+    // --- Métodos de Regra de Negócio ---
+
+    // "throws IOException": Avisa que se der erro de leitura (arquivo não existe),
+    // quem chamou este método (Main) que se vire para tratar. Não usamos try-catch aqui.
     public void criarCadastro() throws IOException {
+
+        // --- Leitura de Conta Corrente ---
+        // Cria o vínculo com o arquivo físico no disco
         File arquivoCC = new File("IftoDisciplinaPoo/PooiftoAula12ProjetoContaBancoHeranca/cc.txt");
         Scanner leitorCC = new Scanner(arquivoCC);
 
-        while (leitorCC.hasNextLine()) {
-            String linha = leitorCC.nextLine();
-            String[] partes = linha.split(";");
+        while (leitorCC.hasNextLine()) { // Enquanto houver linhas no arquivo...
+            String linha = leitorCC.nextLine(); // Lê a linha inteira
+            String[] partes = linha.split(";"); // Quebra a linha onde tem ";" criando um vetor
 
-            // O .trim() é vital aqui para limpar os espaços: "; João" vira "João"
+            // .trim(): Remove espaços em branco antes e depois (ex: " João" vira "João")
             String num = partes[0].trim();
             String nome = partes[1].trim();
+            // Double.parseDouble: Converte o texto "100.00" para o número 100.00
             double saldo = Double.parseDouble(partes[2].trim());
             double limite = Double.parseDouble(partes[3].trim());
 
+            // Cria o objeto filho (Corrente)
             ContaCorrente cc = new ContaCorrente(num, nome, saldo, limite);
+
+            // Adiciona na lista Genérica (Polimorfismo: A lista é de Conta, mas aceita Corrente)
             lista.add(cc);
         }
-        leitorCC.close();
+        leitorCC.close(); // Libera o arquivo
 
+        // --- Leitura de Conta Poupança ---
         File arquivoCP = new File("IftoDisciplinaPoo/PooiftoAula12ProjetoContaBancoHeranca/cp.txt");
         Scanner leitorCP = new Scanner(arquivoCP);
 
@@ -49,118 +66,82 @@ public class Conta {
             String linha = leitorCP.nextLine();
             String[] partes = linha.split(";");
 
+            // Repete o processo de limpeza e conversão
             String num = partes[0].trim();
             String nome = partes[1].trim();
             double saldo = Double.parseDouble(partes[2].trim());
             double taxa = Double.parseDouble(partes[3].trim());
 
+            // Cria o objeto filho (Poupança)
             ContaPoupanca cp = new ContaPoupanca(num, nome, saldo, taxa);
             lista.add(cp);
         }
         leitorCP.close();
 
-        System.out.println("Cadastro carregado! Total de contas: " + lista.size());
-
+        System.out.println("Cadastro carregado com sucesso! Total: " + lista.size());
     }
 
     public void saque(double valor) {
-        // Verifica se tem saldo suficiente
         if (this.saldo >= valor) {
-            this.saldo -= valor; // Debita
-            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+            this.saldo -= valor;
+            System.out.println("Saque realizado. Novo saldo: " + this.saldo);
         } else {
-            System.out.println("Saldo insuficiente para saque de R$ " + valor);
+            System.out.println("Saldo insuficiente.");
         }
     }
 
     public void deposito(double valor) {
-        // Apenas soma
         this.saldo += valor;
-        System.out.println("Depósito de R$ " + valor + " realizado!");
+        System.out.println("Depósito realizado. Novo saldo: " + this.saldo);
     }
 
-    // Recebe 0 para Corrente e 1 para Poupança
+    // Método para filtrar relatórios
     public void listar(int tipo) {
+        // Cabeçalhos de organização
+        if (tipo == 0) System.out.println("\n--- LISTAGEM: CONTA CORRENTE ---");
+        else if (tipo == 1) System.out.println("\n--- LISTAGEM: CONTA POUPANÇA ---");
 
-        // 1. Cabeçalho para ficar organizado no console
-        if (tipo == 0) {
-            System.out.println("\n--- RELATÓRIO: CONTAS CORRENTES ---");
-        } else if (tipo == 1) {
-            System.out.println("\n--- RELATÓRIO: CONTAS POUPANÇA ---");
-        } else {
-            System.out.println("Opção inválida (Use 0 ou 1)");
-            return; // Sai do método se o número for errado
-        }
-
-        // 2. Percorre a lista inteira (que tem os dois tipos misturados)
+        // Percorre a lista mista
         for (Conta c : lista) {
 
-            // CENÁRIO A: O usuário quer Conta Corrente (0)
-            // E (&&) o objeto atual "c" É UMA (instanceof) ContaCorrente
+            // INSTANCEOF: O "Raio-X" do Java.
+            // Verifica se o objeto genérico "c" é, na verdade, uma ContaCorrente.
             if (tipo == 0 && c instanceof ContaCorrente) {
-                System.out.println("CC: " + c.getNumConta() + " | Titular: " + c.getTitular() + " | Saldo: " + c.getSaldo());
+                System.out.println("CC: " + c.getNumConta() + " | Titular: " + c.getTitular());
             }
-
-            // CENÁRIO B: O usuário quer Conta Poupança (1)
-            // E (&&) o objeto atual "c" É UMA (instanceof) ContaPoupanca
+            // Verifica se é ContaPoupanca
             else if (tipo == 1 && c instanceof ContaPoupanca) {
-                System.out.println("CP: " + c.getNumConta() + " | Titular: " + c.getTitular() + " | Saldo: " + c.getSaldo());
+                System.out.println("CP: " + c.getNumConta() + " | Titular: " + c.getTitular());
             }
         }
     }
 
+    // Retorna o objeto Conta encontrado (ou null se não achar)
     public Conta pesquisar(String numContaProcurado, int tipo) {
-
         for (Conta c : lista) {
-            // 1. Verifica se o número bate (Use equals para String!)
+            // 1. Verifica se o número é igual (equals para Strings)
             if (c.getNumConta().equals(numContaProcurado)) {
 
-                // 2. Verifica se o tipo bate com o que foi pedido
+                // 2. Verifica se o tipo é o desejado (instanceof)
                 if (tipo == 0 && c instanceof ContaCorrente) {
-                    return c; // ACHOU Conta Corrente! Retorna ela.
+                    return c; // Retorna o objeto e para a busca
                 }
                 else if (tipo == 1 && c instanceof ContaPoupanca) {
-                    return c; // ACHOU Conta Poupança! Retorna ela.
+                    return c;
                 }
             }
         }
-        // Se rodou a lista toda e não achou ou o tipo estava errado
-        return null;
+        return null; // Não encontrou ninguém
     }
 
-    //Getters e Setters-------
-    public String getNumConta() {
-        return numConta;
-    }
+    // --- Getters e Setters (Encapsulamento) ---
+    public String getNumConta() { return numConta; }
+    public void setNumConta(String numConta) { this.numConta = numConta; }
+    public String getTitular() { return titular; }
+    public void setTitular(String titular) { this.titular = titular; }
+    public double getSaldo() { return saldo; }
+    public void setSaldo(double saldo) { this.saldo = saldo; }
 
-    public void setNumConta(String numConta) {
-        this.numConta = numConta;
-    }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
-    public static List<Conta> getLista() {
-        return lista;
-    }
-
-    public static void setLista(List<Conta> lista) {
-        Conta.lista = lista;
-    }
+    public static List<Conta> getLista() { return lista; }
+    public static void setLista(List<Conta> lista) { Conta.lista = lista; }
 }
-
-
-

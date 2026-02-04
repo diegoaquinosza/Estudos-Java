@@ -1,72 +1,136 @@
 package aplicacao;
 
 import entidade.Conta;
+import entidade.ContaCorrente;
+import entidade.ContaPoupanca;
+
 import java.io.IOException;
+import java.util.Scanner;
 
-    public class Iniciar {
-        // Atributos estáticos pedidos no diagrama
-        public static String cc = "cc.txt";
-        public static String cp = "cp.txt";
+public class Iniciar {
+    // Caminhos dos arquivos
+    public static String cc = "cc.txt";
+    public static String cp = "cp.txt";
 
-        // O "throws IOException" aqui é obrigatório porque o criarCadastro avisa que pode dar erro
-        public static void main(String[] args) throws IOException {
-            System.out.println("--- SISTEMA BANCÁRIO ---");
+    public static void main(String[] args) throws IOException {
 
-            // 1. Instancia uma conta vazia apenas para chamar os métodos de gerenciamento
-            // (Lembre-se: o criarCadastro preenche a lista estática que pertence à classe toda)
-            Conta aux = new Conta();
+        // Scanner para leitura do teclado
+        Scanner scanner = new Scanner(System.in);
 
-            // 2. Chama o método que lê os arquivos
-            System.out.println("Lendo arquivos...");
-            aux.criarCadastro();
+        // Objeto auxiliar criado apenas para carregar os dados e acessar a lista
+        Conta contaAuxiliar = new Conta();
 
-            // Teste para ver se deu certo (acessando a lista estática)
-            System.out.println("\nVerificação Final:");
-            if (!Conta.getLista().isEmpty()) {
-                System.out.println("Sucesso! A lista contém " + Conta.getLista().size() + " contas.");
+        System.out.println("Carregando arquivos de dados...");
+        contaAuxiliar.criarCadastro(); // Carrega cc.txt e cp.txt para a memoria
 
-                // Vamos espiar o primeiro elemento para ver se é Corrente ou Poupança
-                Conta primeira = Conta.getLista().get(0);
-                System.out.println("Primeira conta carregada: " + primeira.getTitular() + " - Saldo: " + primeira.getSaldo());
-            } else {
-                System.out.println("Erro: A lista está vazia.");
+        // --- DEFINICAO DOS MENUS (Textos) ---
+        String menuGeral = "\n--- MENU PRINCIPAL ---\n"+
+                "1 - Conta Corrente\n"+
+                "2 - Conta Poupanca\n"+
+                "3 - Sair\n"+
+                "Opcao: ";
+
+        String menuContaCorrente = "\n--- OPERACOES CONTA CORRENTE ---\n"+
+                "1 - Saque (R$ 1000 fixo)\n"+
+                "2 - Deposito (R$ 2000 fixo)\n"+
+                "3 - Emprestimo (R$ 5000 fixo)\n"+
+                "Opcao: ";
+
+        String menuContaPoupanca = "\n--- OPERACOES CONTA POUPANCA ---\n"+
+                "1 - Saque (R$ 1000 fixo)\n"+
+                "2 - Deposito (R$ 2000 fixo)\n"+
+                "3 - Rendimento (Simulacao 10 meses)\n"+
+                "Opcao: ";
+
+        // --- LOOP INFINITO DO SISTEMA ---
+        while(true){
+
+            // Exibe menu principal e le a escolha
+            System.out.print(menuGeral);
+            int opcaoPrincipal = scanner.nextInt();
+
+            // Condicao de saida (Opcao 3 ou maior)
+            if(opcaoPrincipal >= 3){
+                System.out.println("Sistema finalizado.");
+                break;
             }
 
-            // ... TESTES ...
-            // ... depois do criarCadastro ...
+            // --- FLUXO 1: CONTA CORRENTE ---
+            if(opcaoPrincipal == 1){
+                System.out.print(menuContaCorrente);
+                int opcaoSubMenu = scanner.nextInt();
 
-            // Teste: Mostra só as Correntes
-            //aux.listar(0);
+                // Mostra a lista para o usuario saber qual numero digitar
+                contaAuxiliar.listar(0);
 
-            // Teste: Mostra só as Poupanças
-            //aux.listar(1);
+                System.out.print("Digite o Numero da Conta: ");
+                String numeroContaBusca = scanner.next();
 
-            // ... códigos anteriores ...
+                // BUSCA E CASTING
+                // 1. Pesquisa a conta pelo numero e tipo 0 (Corrente)
+                // 2. (ContaCorrente): Forca a conversao (Cast) pois o metodo pesquisar retorna "Conta" generica
+                ContaCorrente contaCorrenteEncontrada = (ContaCorrente) contaAuxiliar.pesquisar(numeroContaBusca, 0);
 
-            System.out.println("\n--- TESTE DE PESQUISA ---");
-            // Tente pegar um número que EXISTA no seu arquivo cc.txt
-            // Exemplo: Vou buscar a conta "1111-X" (troque pelo número real do seu arquivo)
-            String numeroBusca = "00123456-7"; // Use um número que existe no seu cc.txt
+                // Validacao: Se nao encontrou (null), volta para o inicio do loop
+                if(contaCorrenteEncontrada == null){
+                    System.out.println("Conta nao encontrada.");
+                    continue;
+                }
 
-            // Busca do tipo 0 (Corrente)
-            Conta encontrada = aux.pesquisar(numeroBusca, 0);
-
-            if (encontrada != null) {
-                System.out.println("✅ Conta Localizada: " + encontrada.getTitular());
-                System.out.println("Saldo Inicial: " + encontrada.getSaldo());
-
-                // 1. Tenta sacar (Teste um valor possível e um impossível)
-                System.out.println("\n--- Operação de Saque ---");
-                encontrada.saque(200.00);
-
-                // 2. Faz um depósito
-                System.out.println("\n--- Operação de Depósito ---");
-                encontrada.deposito(50.00);
-
-                // 3. Confere o saldo final
-                System.out.println("\nSaldo Final: " + encontrada.getSaldo());
-            } else {
-                System.out.println("❌ Conta não encontrada (ou tipo incorreto).");
+                // Executa a acao na conta encontrada
+                switch (opcaoSubMenu){
+                    case 1:
+                        contaCorrenteEncontrada.saque(1000);
+                        break;
+                    case 2:
+                        contaCorrenteEncontrada.deposito(2000);
+                        break;
+                    case 3:
+                        // Metodo exclusivo de ContaCorrente
+                        contaCorrenteEncontrada.emprestimo(5000);
+                        break;
+                    default:
+                        System.out.println("Opcao invalida");
+                }
             }
-        }
+            // --- FLUXO 2: CONTA POUPANCA ---
+            else if(opcaoPrincipal == 2){
+                System.out.print(menuContaPoupanca);
+                int opcaoSubMenu = scanner.nextInt();
+
+                contaAuxiliar.listar(1); // Lista as poupancas
+
+                System.out.print("Digite o Numero da Conta: ");
+                String numeroContaBusca = scanner.next();
+
+                // Busca e Casting para Poupanca
+                ContaPoupanca contaPoupancaEncontrada = (ContaPoupanca) contaAuxiliar.pesquisar(numeroContaBusca, 1);
+
+                if(contaPoupancaEncontrada == null){
+                    System.out.println("Conta nao encontrada.");
+                    continue;
+                }
+
+                switch (opcaoSubMenu){
+                    case 1:
+                        contaPoupancaEncontrada.saque(1000);
+                        break;
+                    case 2:
+                        contaPoupancaEncontrada.deposito(2000);
+                        break;
+                    case 3:
+                        // Metodo exclusivo de ContaPoupanca
+                        contaPoupancaEncontrada.ganhoMes(10);
+                        break;
+                    default:
+                        System.out.println("Opcao invalida");
+                }
+
+            } else {
+                System.out.println("Opcao invalida no menu principal.");
+            }
+        } // Fim do While
+
+        scanner.close(); // Boa pratica: fechar o scanner ao sair
     }
+}

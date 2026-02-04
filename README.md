@@ -15,7 +15,11 @@ Exercícios e exemplos teóricos desenvolvidos durante as aulas de Programação
 * `Aula02`: Métodos, Atributos e Visibilidade.
 * `Aula03`: Estruturas de Dados (ArrayList) e Exceções.
 * `Aula04`: Modificadores de Acesso avançados e Encapsulamento.
-* **`Aula05` (Novo!):** Leitura de Arquivos (`File` e `Scanner`), Tratamento de Strings (`split`) e conversão de dados de texto (`.txt`) para Objetos Java.
+* **`Aula05`:** Leitura de Arquivos (`File` e `Scanner`), Tratamento de Strings (`split`) e conversão de dados de 
+  texto (`.txt`) para Objetos Java.
+* **`Aula12` (Herança):** Sistema Bancário completo.
+    * **Conceitos:** Herança (`extends`), Polimorfismo, Sobrescrita, Casting de Objetos e `instanceof`.
+    * **Prática:** Leitura de múltiplos arquivos (`cc.txt`, `cp.txt`) unificando em uma lista polimórfica.
 
 ### 🚀 SenacCursoJava (Curso Extra)
 Exercícios práticos e desafios de lógica para reforçar o aprendizado (focado em "Mão na Massa").
