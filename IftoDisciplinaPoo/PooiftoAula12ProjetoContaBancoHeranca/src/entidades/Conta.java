@@ -1,4 +1,4 @@
-package entidade;
+package entidades;
 
 import java.io.File;
 import java.io.IOException;

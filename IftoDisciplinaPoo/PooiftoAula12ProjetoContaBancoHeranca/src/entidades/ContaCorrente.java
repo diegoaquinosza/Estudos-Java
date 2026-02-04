@@ -1,4 +1,4 @@
-package entidade;
+package entidades;
 
 // EXTENDS: Herança. ContaCorrente herda tudo (atributos e métodos) de Conta.
 public class ContaCorrente extends Conta {

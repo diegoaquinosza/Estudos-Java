@@ -1,4 +1,4 @@
-package entidade;
+package entidades;
 
 // EXTENDS: Herda de Conta
 public class ContaPoupanca extends Conta {

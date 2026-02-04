@@ -1,16 +1,16 @@
 package aplicacao;
 
-import entidade.Conta;
-import entidade.ContaCorrente;
-import entidade.ContaPoupanca;
+import entidades.Conta;
+import entidades.ContaCorrente;
+import entidades.ContaPoupanca;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Iniciar {
     // Caminhos dos arquivos
-    public static String cc = "cc.txt";
-    public static String cp = "cp.txt";
+    public static String cc = "IftoDisciplinaPoo/PooiftoAula12ProjetoContaBancoHeranca/cc.txt";
+    public static String cp = "IftoDisciplinaPoo/PooiftoAula12ProjetoContaBancoHeranca/cp.txt";
 
     public static void main(String[] args) throws IOException {
 

@@ -1,0 +1,48 @@
+001245-8; João Martins; 4583.27; 0.57
+001246-6; Maria do Carmo; 12480.55; 0.59
+001247-4; Pedro Henrique Souza; 2340.00; 0.56
+001248-2; Ana Beatriz Ramos; 18924.13; 0.60
+001249-0; Ricardo Nogueira; 9850.77; 0.58
+001250-3; Fernanda Alves; 7412.42; 0.57
+001251-1; Lucas Ferreira; 15207.19; 0.59
+001252-9; Camila Barros; 5934.80; 0.55
+001253-7; Rafael Monteiro; 22450.00; 0.61
+001254-5; Juliana Carvalho; 3512.93; 0.56
+001255-3; Bruno Andrade; 6144.72; 0.58
+001256-1; Larissa Teixeira; 13980.20; 0.60
+001257-0; Gustavo Oliveira; 8273.10; 0.57
+001258-8; Cláudia Rocha; 2190.90; 0.55
+001259-6; Thiago Lima; 17501.88; 0.59
+001260-0; Paula Castro; 25730.00; 0.61
+001261-8; André Moreira; 4872.15; 0.56
+001262-6; Bianca Torres; 10584.00; 0.58
+001263-4; Felipe Duarte; 19700.33; 0.60
+001264-2; Carolina Mendes; 3249.00; 0.55
+001265-0; Eduardo Pinto; 12980.12; 0.59
+001266-9; Patrícia Souza; 6702.45; 0.57
+001267-7; Wagner Costa; 14815.32; 0.60
+001268-5; Marina Ramos; 8934.78; 0.58
+001269-3; Alexandre Dias; 2590.90; 0.55
+001270-7; Denise Santos; 5342.15; 0.56
+001271-5; Roberto Almeida; 11674.21; 0.58
+001272-3; Priscila Gonçalves; 9404.89; 0.57
+001273-1; Marcelo Vieira; 21905.40; 0.61
+001274-0; Aline Cardoso; 4131.73; 0.55
+001275-8; Vinícius Farias; 16509.22; 0.59
+001276-6; Luana Brito; 2734.66; 0.56
+001277-4; Adriano Silva; 13800.00; 0.60
+001278-2; Renata Campos; 7249.99; 0.57
+001279-0; Fábio Santos; 5080.85; 0.56
+001280-4; Vanessa Ribeiro; 18950.00; 0.61
+001281-2; Rodrigo Pires; 6777.14; 0.58
+001282-0; Tatiane Lopes; 3592.64; 0.55
+001283-9; Everton Moraes; 11321.50; 0.58
+001284-7; Michele Freitas; 9843.71; 0.57
+001285-5; Douglas Rezende; 15612.00; 0.59
+001286-3; Beatriz Neves; 20001.88; 0.61
+001287-1; Cristiano Batista; 7901.50; 0.57
+001288-0; Simone Azevedo; 4577.44; 0.56
+001289-8; Gabriel Lima; 10984.77; 0.58
+001290-1; Débora Moreira; 3355.22; 0.55
+001291-0; Mateus Borges; 24780.00; 0.61
+001292-8; Lívia Pereira; 8409.99;0.34
