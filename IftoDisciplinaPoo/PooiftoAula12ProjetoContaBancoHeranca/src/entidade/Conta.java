@@ -63,9 +63,21 @@ public class Conta {
 
     }
 
-    public void saque(double valor){}
+    public void saque(double valor) {
+        // Verifica se tem saldo suficiente
+        if (this.saldo >= valor) {
+            this.saldo -= valor; // Debita
+            System.out.println("Saque de R$ " + valor + " realizado com sucesso!");
+        } else {
+            System.out.println("Saldo insuficiente para saque de R$ " + valor);
+        }
+    }
 
-    public void deposito(double valor){}
+    public void deposito(double valor) {
+        // Apenas soma
+        this.saldo += valor;
+        System.out.println("Depósito de R$ " + valor + " realizado!");
+    }
 
     // Recebe 0 para Corrente e 1 para Poupança
     public void listar(int tipo) {

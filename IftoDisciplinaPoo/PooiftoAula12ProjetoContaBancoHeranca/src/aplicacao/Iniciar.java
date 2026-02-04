@@ -36,25 +36,35 @@ import java.io.IOException;
             // ... depois do criarCadastro ...
 
             // Teste: Mostra só as Correntes
-            aux.listar(0);
+            //aux.listar(0);
 
             // Teste: Mostra só as Poupanças
-            aux.listar(1);
+            //aux.listar(1);
 
             // ... códigos anteriores ...
 
             System.out.println("\n--- TESTE DE PESQUISA ---");
             // Tente pegar um número que EXISTA no seu arquivo cc.txt
             // Exemplo: Vou buscar a conta "1111-X" (troque pelo número real do seu arquivo)
-            String numeroBusca = "001245-8"; // Use um número que existe no seu cc.txt
+            String numeroBusca = "00123456-7"; // Use um número que existe no seu cc.txt
 
             // Busca do tipo 0 (Corrente)
             Conta encontrada = aux.pesquisar(numeroBusca, 0);
 
             if (encontrada != null) {
-                System.out.println("✅ Conta Localizada!");
-                System.out.println("Titular: " + encontrada.getTitular());
-                System.out.println("Saldo: " + encontrada.getSaldo());
+                System.out.println("✅ Conta Localizada: " + encontrada.getTitular());
+                System.out.println("Saldo Inicial: " + encontrada.getSaldo());
+
+                // 1. Tenta sacar (Teste um valor possível e um impossível)
+                System.out.println("\n--- Operação de Saque ---");
+                encontrada.saque(200.00);
+
+                // 2. Faz um depósito
+                System.out.println("\n--- Operação de Depósito ---");
+                encontrada.deposito(50.00);
+
+                // 3. Confere o saldo final
+                System.out.println("\nSaldo Final: " + encontrada.getSaldo());
             } else {
                 System.out.println("❌ Conta não encontrada (ou tipo incorreto).");
             }
